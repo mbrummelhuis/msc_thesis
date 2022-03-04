@@ -1,4 +1,4 @@
-# msc_thesis
+# Repository msc_thesis
 Repository for MSc thesis on aerial manipulation
 
 Serves as main directory for all code developed during my MSc thesis on aerial manipulation.
