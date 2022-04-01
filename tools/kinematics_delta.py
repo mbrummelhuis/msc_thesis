@@ -51,22 +51,29 @@ class DeltaRobot():
             y0 = (a2*z0 + b2)/dnm
             return [x0, y0, z0]
 
-    def inverseKinematicsHelper(self, x,y,z):
-        y = y-self.r_ee
-        a = (x ** 2 + y ** 2 + z ** 2 + self.l_bicep ** 2 - self.l_forearm ** 2 - self.r_ee)/(2*z)
-        b = (self.r_base - y)/z
-        d = -(a+b*self.r_base)*(a+b*self.r_base)+self.l_bicep*(b*b*self.l_bicep+self.l_bicep)
-        if d < 0:
+    def inverseKinematicsHelper(self, x0,y0,z0):
+        y1 = -self.r_base
+        y0 = y0 - self.r_ee
+        a = (x0*x0 + y0*y0 + z0*z0 +self.l_bicep*self.l_bicep - self.l_forearm*self.l_forearm - y1*y1)/(2*z0)
+        b = (y1-y0)/z0
+        d = -(a+b*y1)*(a+b*y1)+self.l_bicep*(b*b*self.l_bicep+self.l_bicep)
+        if d<0:
+            print("Non-existing point")
             return -1
         else:
-            yj = (self.r_base - a*b - sqrt(d))/(b*b+1)
+            yj = (y1 - a*b - sqrt(d))/(b*b + 1)
             zj = a + b*yj
-            theta = atan(-zj/(self.r_base - yj)) * 180/pi
+            theta = atan(-zj/(y1-yj)) * 180/pi
+            if yj>y1:
+                theta += 180
+            else:
+                pass
             return theta
     
     def inverseKinematics(self, x, y, z):
         theta1 = theta2 = theta3 = 0
         theta1 = self.inverseKinematicsHelper(x,y,z)
+        print("Theta 1: ", theta1)
         if theta1 != -1:
             theta2 = self.inverseKinematicsHelper(x*cos(radians(120))+y*sin(radians(120)), y*cos(radians(120))-x*sin(radians(120)), z)
             if theta2 != -1:
@@ -84,15 +91,14 @@ class DeltaRobot():
             return
 
 if __name__=='__main__':
-    r_base = 0.1
-    r_ee = 0.05
-    l_bicep = 0.2
-    l_forearm = 0.4
+    r_base = 100
+    r_ee = 50
+    l_bicep = 200
+    l_forearm = 400
     delta = DeltaRobot(r_base, r_ee, l_bicep, l_forearm)
-    angles = delta.inverseKinematics(0,0,-0.4)
-    print("angles (deg): ", angles)
-    for i in range(len(angles)):
-        print(radians(angles[i]))
 
-    position = delta.forwardKinematics(radians(angles[0]), radians(angles[1]), radians(angles[2]))
+    position = delta.forwardKinematics(radians(45), radians(30), radians(25))
+    angles = delta.inverseKinematics(position[0],position[1],position[2])
+
     print(position)
+    print(angles)
