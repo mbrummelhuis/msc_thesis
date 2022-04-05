@@ -1,0 +1,6 @@
+devel_space: /home/mbrummelhuis/msc_thesis/catkin_ws/devel
+install: false
+install_space: /home/mbrummelhuis/msc_thesis/catkin_ws/install
+profile: default
+source_space: /home/mbrummelhuis/msc_thesis/catkin_ws/src
+workspace: /home/mbrummelhuis/msc_thesis/catkin_ws

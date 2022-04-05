@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/mbrummelhuis/msc_thesis/catkin_ws/devel/.private/mavros_msgs/setup.sh
