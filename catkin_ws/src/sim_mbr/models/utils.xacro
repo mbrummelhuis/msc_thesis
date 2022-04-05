@@ -1,0 +1,81 @@
+<?xml version="1.0">
+<!-- This file specifies the helper macros used in the aerial platform and delta manipulator xacro files -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Create cylinder element macro -->
+  <xacro:macro name="cylinder" params="name radius length">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="${radius}" length="${length}">
+        </geometry>
+        <origin xyz="" rpy=""/> # Fill in
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${radius}" length="${length}">
+        </geometry>
+        <origin xyz="" rpy=""/> # Fill in
+      </collision>
+      <xacro:cylinder_inertial  m="${mass}" # Write cylinder inertial macro in utils
+                                radius="${radius}"
+                                length="${length}"/>
+    </link>
+    
+    <!-- Gazebo simulation settings -->
+    <gazebo reference="${name}_${arm_number}">
+        <selfCollide>true</selfCollide>
+        <static>false</static>
+        <turnGravityOff>true</turnGravityOff>
+        <material>Gazebo/${element_colour}</material>
+    </gazebo>
+    
+  </xacro:macro>
+  
+  <!-- Universal joint element macro - URDF has no universal joints so we use two revolute/continuous joints around a small, collisionless and inertia-less cube -->
+  <xacro:macro name="univ_joint" params="name arm_number">
+    <link name="${name}_${arm_number}">
+      <visual>
+        <geometry>
+          <box size="${lenght_uj} ${lenght_uj} ${lenght_uj}">
+        </geometry>
+        <origin xyz="" rpy="" /> # Fill in
+      </visual>
+      <collision>
+        <origin xyz="" rpy="" /> # Fill in
+      </collision>
+      <inertial>
+        <mass />
+      </inertial> 
+    </link>
+    
+    <gazebo reference="${name}_${arm_number}">
+      <selfCollide>true</selfCollide>
+      <static>false</static>
+      <turnGravityOff>true</turnGravityOff>
+      <material>Gazebo/${element_colour}</material>
+    </gazebo>
+  </xacro:macro>
+  
+  <!-- Macro for calculating the <inertial> tag for a box geometry -->
+  <xacro:macro name="box_inertial"params="m x y z dx dy dz">
+    <inertial>
+      <mass  value="${m}"/>
+      <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+      <inertia ixx="${m/12*(dy*dy + dz*dz)}" ixy="0.0" ixz="0.0"
+               iyy="${m/12*(dx*dx + dz*dz)}" iyz="0.0"
+               izz="${m/12*(dx*dx + dy*dy)}"/>
+    </inertial>
+  </xacro:macro>
+  
+  <!-- Macro for calculating the <inertial> tag for a cylinder geometry -->  
+  <xacro:macro name="cylinder_inertial" params="m x y z r l">
+    <inertial>
+      <mass value="${m}" />
+      <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
+      <inertia  ixx="" ixy="0.0" ixz="0.0" # Fill in inertia calculations
+                iyy="" iyz="0.0"
+                izz="" />
+    </inertial>
+  </xacro:macro>
+  

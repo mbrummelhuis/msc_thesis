@@ -1,0 +1,21 @@
+<?xml version="1.0">
+<!-- This file specifies the structure of the delta manipulator. It uses helper macros from the utils xacro and takes parameters from the parameters xacro file. -->
+
+  <xacro:include filename="parameters.xacro" />
+  <xacro:include filename="utils.xacro" />
+  
+  <!-- Create 3x bicep -->
+  <xacro:cylinder name="bicep_1" radius="${radius_element}" length="${length_bicep}">
+  <xacro:cylinder name="bicep_2" radius="${radius_element}" length="${length_bicep}">
+  <xacro:cylinder name="bicep_3" radius="${radius_element}" length="${length_bicep}">
+  
+  <!-- Create 3x forearm -->
+  <xacro:cylinder name="forearm_1" radius="${radius_element}" length="${length_forearm}">
+  <xacro:cylinder name="forearm_2" radius="${radius_element}" length="${length_forearm}">
+  <xacro:cylinder name="forearm_3" radius="${radius_element}" length="${length_forearm}">
+  
+  <!-- Create base and ee -->
+  <xacro:cylinder name="base" radius="${radius_base}" length="${thickness_base}">
+  <xacro:cylinder name="end_effector" radius="${radius_ee}" length="${thickness_ee}">
+  
+    

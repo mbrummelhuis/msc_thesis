@@ -1,0 +1,16 @@
+<?xml version="1.0">
+<!-- This file specifies all the configurable parameters that dictate the design of the aerial manipulator. -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Parameters -->
+  <xacro:property name="length_bicep"   value="0.2"   />
+  <xacro:property name="length_forearm" value="0.4"   />
+  <xacro:property name="radius_element" value="0.025" />
+  <xacro:property name="radius_base"    value="0.1"   />
+  <xacro:property name="radius_ee"      value="0.05"  />
+  <xacro:property name="length_uj"      value="radius_element"  />
+  <xacro:property name="thickness_base" value="0.1*radius_base" />
+  <xacro:property name="thickness_ee"   value="0.1*radius_ee" />
+  # Maybe some actuator joint limits?
+
+</robot>

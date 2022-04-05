@@ -1,0 +1,8 @@
+prefix=/home/mbrummelhuis/msc_thesis/catkin_ws/install
+
+Name: sim_mbr
+Description: Description of sim_mbr
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

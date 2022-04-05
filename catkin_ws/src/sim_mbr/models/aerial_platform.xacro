@@ -1,0 +1,5 @@
+<?xml version="1.0">
+<!-- This file specifies the links and joints that make up the aerial platform. It uses helper macros from utils.xacro and takes parameters from parameters.xacro -->
+
+  <xacro:include filename="parameters.xacro" />
+  <xacro:include filename="utils.xacro" />
