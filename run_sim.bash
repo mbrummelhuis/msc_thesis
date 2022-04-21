@@ -48,5 +48,5 @@ fi
 #roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world
 
 # Roslaunch for launch file
-#roslaunch sim_mbr mbr_sim_v1.launch  #arg:=value
+roslaunch sim_mbr mbr_sim_v1.launch  #arg:=value
 

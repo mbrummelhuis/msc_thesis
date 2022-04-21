@@ -1,21 +1,139 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <!-- This file specifies the structure of the delta manipulator. It uses helper macros from the utils xacro and takes parameters from the parameters xacro file. -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="delta_manipulator">
 
   <xacro:include filename="parameters.xacro" />
   <xacro:include filename="utils.xacro" />
   
-  <!-- Create 3x bicep -->
-  <xacro:cylinder name="bicep_1" radius="${radius_element}" length="${length_bicep}">
-  <xacro:cylinder name="bicep_2" radius="${radius_element}" length="${length_bicep}">
-  <xacro:cylinder name="bicep_3" radius="${radius_element}" length="${length_bicep}">
+  <!-- Links -->
+  <!-- Bicep links -->
+  <xacro:cylinder name="bicep_1" radius="${radius_element}" length="${length_bicep}" mass="${mass}" />
+  <xacro:cylinder name="bicep_2" radius="${radius_element}" length="${length_bicep}" mass="${mass}" />
+  <xacro:cylinder name="bicep_3" radius="${radius_element}" length="${length_bicep}" mass="${mass}" />
   
-  <!-- Create 3x forearm -->
-  <xacro:cylinder name="forearm_1" radius="${radius_element}" length="${length_forearm}">
-  <xacro:cylinder name="forearm_2" radius="${radius_element}" length="${length_forearm}">
-  <xacro:cylinder name="forearm_3" radius="${radius_element}" length="${length_forearm}">
+  <!-- Forearm links -->
+  <xacro:cylinder name="forearm_1" radius="${radius_element}" length="${length_forearm}" mass="${mass}" />
+  <xacro:cylinder name="forearm_2" radius="${radius_element}" length="${length_forearm}" mass="${mass}" />
+  <xacro:cylinder name="forearm_3" radius="${radius_element}" length="${length_forearm}" mass="${mass}" />
   
-  <!-- Create base and ee -->
-  <xacro:cylinder name="base" radius="${radius_base}" length="${thickness_base}">
-  <xacro:cylinder name="end_effector" radius="${radius_ee}" length="${thickness_ee}">
+  <!-- Base and ee links -->
+  <xacro:cylinder name="base" radius="${radius_base}" length="${thickness_base}" mass="${mass}" />
+  <xacro:cylinder name="end_effector" radius="${radius_ee}" length="${thickness_ee}" mass="${mass}" />
   
+  <!-- Elbow joint links -->
+  <xacro:univ_joint name="elbow_1" />
+  <xacro:univ_joint name="elbow_2" />
+  <xacro:univ_joint name="elbow_3" />
+  
+  <!-- Wrist joint links -->
+  <xacro:univ_joint name="wrist_1" />
+  <xacro:univ_joint name="wrist_2" />
+  <xacro:univ_joint name="wrist_3" />
+  
+  <!-- Joints -->
+  <!-- Revolute joints between base and biceps -->
+  <joint name="base_to_bicep_1" type="revolute">
+    <parent link="base" />
+    <child  link="bicep_1" />
+    <axis />
+    <origin xyz="" rpy ="" />
+  </joint>
+  <joint name="base_to_bicep_2" type="revolute">
+    <parent link="base" />
+    <child  link="bicep_2" />
+    <axis />
+    <origin xyz="" rpy ="" />
+  </joint>
+  <joint name="base_to_bicep_3" type="revolute">
+    <parent link="base" />
+    <child  link="bicep_3" />
+    <axis />
+    <origin xyz="" rpy ="" />
+  </joint>  
+  
+  <!-- Continuous joints between biceps and universal elbow joint link -->
+  <joint name="bicep_to_elbow_1" type="continuous">
+    <parent link="bicep_1" />
+    <child  link="elbow_1" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="bicep_to_elbow_2" type="continuous">
+    <parent link="bicep_2" />
+    <child  link="elbow_2" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="bicep_to_elbow_3" type="continuous">
+    <parent link="bicep_3" />
+    <child  link="elbow_3" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
     
+  <!-- Continuous joints between universal elbow joint links and forearm -->
+    <joint name="elbow_to_forearm_1" type="continuous">
+    <parent link="elbow_1" />
+    <child  link="forearm_1" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="elbow_to_forearm_2" type="continuous">
+    <parent link="elbow_2" />
+    <child  link="forearm_2" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="elbow_to_forearm_3" type="continuous">
+    <parent link="elbow_3" />
+    <child  link="forearm_3" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  
+  <!-- Continuous joints between forearms and universal wrist joint link -->
+  <joint name="forearm_to_wrist_1" type="continuous">
+    <parent link="forearm_1" />
+    <child  link="wrist_1" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="forearm_to_wrist_2" type="continuous">
+    <parent link="forearm_2" />
+    <child  link="wrist_2" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="forearm_to_wrist_3" type="continuous">
+    <parent link="forearm_3" />
+    <child  link="wrist_3" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  
+  <!-- Continuous joints between universal wrist joint link and ee -->
+  <joint name="wrist_to_ee_1" type="continuous">
+    <parent link="wrist_1" />
+    <child  link="end_effector" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="wrist_to_ee_2" type="continuous">
+    <parent link="wrist_2" />
+    <child  link="end_effector" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  <joint name="wrist_to_ee_3" type="continuous">
+    <parent link="wrist_3" />
+    <child  link="end_effector" />
+    <axis />
+    <origin xyz="" rpy="" />
+  </joint>
+  
+</robot>  
+  
+  
+  
+  
+  

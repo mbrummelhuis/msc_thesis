@@ -1,4 +1,4 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <!-- This file specifies all the configurable parameters that dictate the design of the aerial manipulator. -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -8,9 +8,11 @@
   <xacro:property name="radius_element" value="0.025" />
   <xacro:property name="radius_base"    value="0.1"   />
   <xacro:property name="radius_ee"      value="0.05"  />
-  <xacro:property name="length_uj"      value="radius_element"  />
-  <xacro:property name="thickness_base" value="0.1*radius_base" />
-  <xacro:property name="thickness_ee"   value="0.1*radius_ee" />
+  <xacro:property name="length_uj"      value="${radius_element}"  />
+  <xacro:property name="mass_uj"        value="0.01" />
+  <xacro:property name="thickness_base" value="${0.1 * radius_base}" />
+  <xacro:property name="thickness_ee"   value="${0.1 * radius_ee}" />
+  <xacro:property name="mass"           value="1.0" /> #Just give every link a mass of 1 for now, add specific masses to increase fidelity
   # Maybe some actuator joint limits?
 
 </robot>

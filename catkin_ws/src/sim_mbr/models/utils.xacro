@@ -1,64 +1,64 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <!-- This file specifies the helper macros used in the aerial platform and delta manipulator xacro files -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Create cylinder element macro -->
-  <xacro:macro name="cylinder" params="name radius length">
+  <xacro:macro name="cylinder" params="name radius length mass element_color:=White">
     <link name="${name}">
       <visual>
         <geometry>
-          <cylinder radius="${radius}" length="${length}">
+          <cylinder radius="${radius}" length="${length}" />
         </geometry>
-        <origin xyz="" rpy=""/> # Fill in
+        <origin xyz="0 0 0" rpy="0 0 0" /> # Fill in
       </visual>
       <collision>
         <geometry>
-          <cylinder radius="${radius}" length="${length}">
+          <cylinder radius="${radius}" length="${length}" />
         </geometry>
-        <origin xyz="" rpy=""/> # Fill in
+        <origin xyz="0 0 0" rpy=" 0 0 0" /> # Fill in
       </collision>
-      <xacro:cylinder_inertial  m="${mass}" # Write cylinder inertial macro in utils
-                                radius="${radius}"
-                                length="${length}"/>
+      <xacro:cylinder_inertial  m="${mass}" x="0" y="0" z="0"
+                                r="${radius}"
+                                l="${length}" />
     </link>
     
     <!-- Gazebo simulation settings -->
-    <gazebo reference="${name}_${arm_number}">
+    <gazebo reference="${name}">
         <selfCollide>true</selfCollide>
         <static>false</static>
         <turnGravityOff>true</turnGravityOff>
-        <material>Gazebo/${element_colour}</material>
+        <material>Gazebo/${element_color}</material>
     </gazebo>
     
   </xacro:macro>
   
   <!-- Universal joint element macro - URDF has no universal joints so we use two revolute/continuous joints around a small, collisionless and inertia-less cube -->
-  <xacro:macro name="univ_joint" params="name arm_number">
-    <link name="${name}_${arm_number}">
+  <xacro:macro name="univ_joint" params="name element_color:=Blue">
+    <link name="${name}">
       <visual>
         <geometry>
-          <box size="${lenght_uj} ${lenght_uj} ${lenght_uj}">
+          <box size="${length_uj} ${length_uj} ${length_uj}" />
         </geometry>
-        <origin xyz="" rpy="" /> # Fill in
+        <origin xyz="0 0 0" rpy="0 0 0" /> # Fill in
       </visual>
       <collision>
-        <origin xyz="" rpy="" /> # Fill in
+        <origin xyz="0 0 0" rpy="0 0 0" /> # Fill in
       </collision>
       <inertial>
-        <mass />
+        <mass value="${mass_uj}" />
       </inertial> 
     </link>
     
-    <gazebo reference="${name}_${arm_number}">
+    <gazebo reference="${name}">
       <selfCollide>true</selfCollide>
       <static>false</static>
       <turnGravityOff>true</turnGravityOff>
-      <material>Gazebo/${element_colour}</material>
+      <material>Gazebo/${element_color}</material>
     </gazebo>
   </xacro:macro>
   
   <!-- Macro for calculating the <inertial> tag for a box geometry -->
-  <xacro:macro name="box_inertial"params="m x y z dx dy dz">
+  <xacro:macro name="box_inertial" params="m x y z dx dy dz">
     <inertial>
       <mass  value="${m}"/>
       <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
@@ -73,9 +73,11 @@
     <inertial>
       <mass value="${m}" />
       <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
-      <inertia  ixx="" ixy="0.0" ixz="0.0" # Fill in inertia calculations
-                iyy="" iyz="0.0"
-                izz="" />
+      <inertia  ixx="${m/12 * (3*r*r + l*l)}" ixy="0.0" ixz="0.0" 
+                iyy="${m/2 * (r*r)}" iyz="0.0"
+                izz="${ m/12 * (3*r*r + l*l) }" />
     </inertial>
   </xacro:macro>
-  
+
+
+</robot>  

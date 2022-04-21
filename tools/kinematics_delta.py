@@ -97,8 +97,5 @@ if __name__=='__main__':
     l_forearm = 400
     delta = DeltaRobot(r_base, r_ee, l_bicep, l_forearm)
 
-    position = delta.forwardKinematics(radians(45), radians(30), radians(25))
-    angles = delta.inverseKinematics(position[0],position[1],position[2])
-
-    print(position)
+    angles = delta.inverseKinematics(0,0,-300)
     print(angles)

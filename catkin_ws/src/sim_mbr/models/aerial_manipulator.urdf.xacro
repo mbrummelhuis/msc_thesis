@@ -1,6 +1,6 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <!-- This file combines all the parts to create the full aerial manipulator robot description -->
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="element">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mbr_vehicle">
   
   <xacro:include filename="parameters.xacro" />
   <xacro:include filename="utils.xacro" />
@@ -23,6 +23,17 @@
       <mass>    
     </inertial>
   </link>
-
-
+  
+  <!-- Revolute joint with AoR parallel to platform NED y-axis, between platform and manipulator-->
+  <joint name="tilt_servo" type="revolute">
+  # Fill this in
+  </joint>
+  
+  
+  <!-- Link ROS to Gazebo -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
 </robot>
