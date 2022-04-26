@@ -1,0 +1,47 @@
+[35m[1mScanning dependencies of target wrench_publisher_sim[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/wrench_publisher_sim.dir/src/wrench_publisher_sim.cpp.o[0m
+[35m[1mScanning dependencies of target impedance_solver[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/impedance_solver.dir/src/impedance_solver.cpp.o[0m
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/impedance_solver.cpp:3:10:[m[K [01;31m[Kfatal error: [m[K<vector>: No such file or directory
+    3 | #include [01;31m[K"<vector>"[m[K
+      |          [01;31m[K^~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/impedance_solver.dir/build.make:63: CMakeFiles/impedance_solver.dir/src/impedance_solver.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:346: CMakeFiles/impedance_solver.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kfloat32[m[K’ was not declared in this scope; did you mean ‘[01m[Kfloat_t[m[K’?
+   25 |     [01;31m[Kfloat32[m[K[6] test_data = {1.,2.,3.,4.,5.,6.}
+      |     [01;31m[K^~~~~~~[m[K
+      |     [32m[Kfloat_t[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:26:16:[m[K [01;31m[Kerror: [m[K‘[01m[Ktest_data[m[K’ was not declared in this scope
+   26 |     msg.data = [01;31m[Ktest_data[m[K;
+      |                [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:1[m[K:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:27:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 8 has type ‘[01m[Kstd_msgs::Float32MultiArray_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::vector<float>[m[K’} [[01;35m[K-Wformat=[m[K]
+   27 |     ROS_INFO([01;35m[K"%f"[m[K, msg.data);
+      |              [01;35m[K^~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:27:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+   27 |     [01;36m[KROS_INFO[m[K("%f", msg.data);
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:27:16:[m[K [01;36m[Knote: [m[Kformat string is defined here
+   27 |     ROS_INFO("[01;36m[K%f[m[K", msg.data);
+      |               [01;36m[K~^[m[K
+      |                [01;36m[K|[m[K
+      |                [01;36m[Kdouble[m[K
+make[2]: *** [CMakeFiles/wrench_publisher_sim.dir/build.make:63: CMakeFiles/wrench_publisher_sim.dir/src/wrench_publisher_sim.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:157: CMakeFiles/wrench_publisher_sim.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

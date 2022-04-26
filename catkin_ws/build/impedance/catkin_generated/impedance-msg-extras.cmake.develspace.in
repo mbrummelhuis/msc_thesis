@@ -1,0 +1,2 @@
+set(impedance_MESSAGE_FILES "/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/msg/pw.msg")
+set(impedance_SERVICE_FILES "")

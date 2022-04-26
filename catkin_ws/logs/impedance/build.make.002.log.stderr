@@ -1,0 +1,8 @@
+[01m[Kc++:[m[K [01;31m[Kerror: [m[K$(catkin_LIBRARIES): No such file or directory
+make[2]: *** [CMakeFiles/wrench_publisher_sim.dir/build.make:84: /home/mbrummelhuis/msc_thesis/catkin_ws/devel/.private/impedance/lib/impedance/wrench_publisher_sim] Error 1
+make[1]: *** [CMakeFiles/Makefile2:157: CMakeFiles/wrench_publisher_sim.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[Kc++:[m[K [01;31m[Kerror: [m[K$(catkin_LIBRARIES): No such file or directory
+make[2]: *** [CMakeFiles/impedance_solver.dir/build.make:84: /home/mbrummelhuis/msc_thesis/catkin_ws/devel/.private/impedance/lib/impedance/impedance_solver] Error 1
+make[1]: *** [CMakeFiles/Makefile2:346: CMakeFiles/impedance_solver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

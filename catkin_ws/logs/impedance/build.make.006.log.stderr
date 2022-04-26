@@ -1,0 +1,53 @@
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:17:46:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat32MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’
+   17 |   ros::Publisher pub = n.advertise<std_msgs::[01;31m[KFloat32MultiArray[m[K>("impedance_wrench", 1);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:17:46:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat32MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:17:86:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertise<<expression error> >(const char [17], int)[m[K’
+   17 |   ros::Publisher pub = n.advertise<std_msgs::Float32MultiArray>("impedance_wrench", 1[01;31m[K)[m[K;
+      |                                                                                      [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:249:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class M> ros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, bool)[m[K’
+  249 |     Publisher [01;36m[Kadvertise[m[K(const std::string& topic, uint32_t queue_size, bool latch = false)
+      |               [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:249:15:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:17:86:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |   ros::Publisher pub = n.advertise<std_msgs::Float32MultiArray>("impedance_wrench", 1[01;31m[K)[m[K;
+      |                                                                                      [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:1[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:315:13:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class M> ros::Publisher ros::NodeHandle::advertise(const string&, uint32_t, const SubscriberStatusCallback&, const SubscriberStatusCallback&, const VoidConstPtr&, bool)[m[K’
+  315 |   Publisher [01;36m[Kadvertise[m[K(const std::string& topic, uint32_t queue_size,
+      |             [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:315:13:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:17:86:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |   ros::Publisher pub = n.advertise<std_msgs::Float32MultiArray>("impedance_wrench", 1[01;31m[K)[m[K;
+      |                                                                                      [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/impedance_solver.cpp:1[m[K:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/impedance_solver.cpp:[m[K In function ‘[01m[Kvoid wrenchCallback(const ConstPtr&)[m[K’:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/impedance_solver.cpp:40:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct std_msgs::String_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kx[m[K’
+   40 |   ROS_INFO("Received wrench update: %f", msg->[01;31m[Kx[m[K);
+      |                                               [01;31m[K^[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/impedance_solver.cpp:40:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+   40 |   [01;36m[KROS_INFO[m[K("Received wrench update: %f", msg->x);
+      |   [01;36m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/wrench_publisher_sim.dir/build.make:63: CMakeFiles/wrench_publisher_sim.dir/src/wrench_publisher_sim.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:157: CMakeFiles/wrench_publisher_sim.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/impedance_solver.dir/build.make:63: CMakeFiles/impedance_solver.dir/src/impedance_solver.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:346: CMakeFiles/impedance_solver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

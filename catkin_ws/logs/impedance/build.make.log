@@ -1,0 +1,5 @@
+[35m[1mScanning dependencies of target impedance_solver[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/impedance_solver.dir/src/impedance_solver.cpp.o[0m
+[ 75%] Built target wrench_publisher_sim
+[100%] [32m[1mLinking CXX executable /home/mbrummelhuis/msc_thesis/catkin_ws/devel/.private/impedance/lib/impedance/impedance_solver[0m
+[100%] Built target impedance_solver

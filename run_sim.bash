@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Bash file to launch the aerial manipulation sim from ROS
+# Author: Martijn Brummelhuis
+# m.b.j.brummelhuis@student.tudelft.nl
 
 # Check if running and kill Gazebo because if you restart too many times it will not properly kill the gzserver
 if pgrep -x gazebo >/dev/null
@@ -40,7 +42,7 @@ if pgrep -x QGroundControl >/dev/null
 then
   echo "QGroundControl already running"
 else  
-  #~/QGroundControl.AppImage &
+  ~/QGroundControl.AppImage &
   echo "Starting QGroundControl"
 fi
 

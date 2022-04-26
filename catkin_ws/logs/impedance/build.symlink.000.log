@@ -1,0 +1,5 @@
+Symlinking /home/mbrummelhuis/msc_thesis/catkin_ws/devel/share/impedance/cmake/impedanceConfig.cmake
+Symlinking /home/mbrummelhuis/msc_thesis/catkin_ws/devel/share/impedance/cmake/impedanceConfig-version.cmake
+Symlinking /home/mbrummelhuis/msc_thesis/catkin_ws/devel/lib/impedance/impedance_solver
+Symlinking /home/mbrummelhuis/msc_thesis/catkin_ws/devel/lib/impedance/wrench_publisher_sim
+Symlinking /home/mbrummelhuis/msc_thesis/catkin_ws/devel/lib/pkgconfig/impedance.pc

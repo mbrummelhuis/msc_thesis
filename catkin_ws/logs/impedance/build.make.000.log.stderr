@@ -1,0 +1,19 @@
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:25:10:[m[K [01;31m[Kerror: [m[K‘[01m[KstringStream[m[K’ is not a member of ‘[01m[Kstd[m[K’; did you mean ‘[01m[Kstringstream[m[K’?
+   25 |     std::[01;31m[KstringStream[m[K ss;
+      |          [01;31m[K^~~~~~~~~~~~[m[K
+      |          [32m[Kstringstream[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kss[m[K’ was not declared in this scope
+   26 |     [01;31m[Kss[m[K << "Dummy wrench msg " << count;
+      |     [01;31m[K^~[m[K
+[01m[K/home/mbrummelhuis/msc_thesis/catkin_ws/src/impedance/src/wrench_publisher_sim.cpp:33:10:[m[K [01;31m[Kerror: [m[K‘[01m[KSpinOnce[m[K’ is not a member of ‘[01m[Kros[m[K’; did you mean ‘[01m[KspinOnce[m[K’?
+   33 |     ros::[01;31m[KSpinOnce[m[K();
+      |          [01;31m[K^~~~~~~~[m[K
+      |          [32m[KspinOnce[m[K
+make[2]: *** [CMakeFiles/wrench_publisher_sim.dir/build.make:63: CMakeFiles/wrench_publisher_sim.dir/src/wrench_publisher_sim.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:157: CMakeFiles/wrench_publisher_sim.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[Kc++:[m[K [01;31m[Kerror: [m[K$(catkin_Libraries): No such file or directory
+make[2]: *** [CMakeFiles/impedance_solver.dir/build.make:84: /home/mbrummelhuis/msc_thesis/catkin_ws/devel/.private/impedance/lib/impedance/impedance_solver] Error 1
+make[1]: *** [CMakeFiles/Makefile2:346: CMakeFiles/impedance_solver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -5,9 +5,9 @@
   
   <!-- vehicle model and world -->
   <arg name="est" default="ekf2"/>
-  <arg name="vehicle" default="iris"/>
+  <arg name="vehicle" default="mbr_sim"/>
   <arg name="model" default = "iris"/>
-  <arg name="world" default="~/msc_thesis/gazebo/worlds/my_world.world"/>
+  <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/mbr_sitl.world"/>
   <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/> <!-- Change model sdf ref -->
   <!-- vehicle pose -->
   <arg name="x" default="0"/>
